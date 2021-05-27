@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+*{
+    font-family: 'Balsamiq Sans', cursive;
+}
+.heading{
+    width: 50%;
+	margin: 30px auto;
+	text-align: center;
+	color: 	#000000;
+	background: #FFF8DC;
+	border: 2px solid #ff8800;
+	border-radius: 20px;
+}
+form{
+    width: 50%; 
+	margin: 30px auto; 
+	border-radius: 5px; 
+	padding: 10px;
+	background: #FFF8DC;
+	border: 1px solid#ff8800;
+}
+form p {
+	color: red;
+	margin: 0px;
+}
+
+.task_input {
+	width: 80%;
+	height: 15px; 
+	padding: 10px;
+	border: 2px solid #000000;
+}
+.add_btn {
+	height: 30px;
+    font-weight: 1000;
+	background: #f75206;
+	color: 	#000000;
+	border: 2px solid #050505;
+	border-radius: 5px; 
+	padding: 5px 20px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+table {
+    width: 50%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+tr {
+	border-bottom: 1px solid #cbcbcb;
+}
+
+th {
+	font-size: 19px;
+	color: #f75206;
+}
+
+th, td{
+	border: none;
+    height: 30px;
+    padding: 2px;
+}
+
+tr:hover {
+	background: #E9E9E9;
+}
+
+.tasktodo {
+	text-align: center;
+	cursor: pointer;
+}
+
+.delete{
+	text-align: center;
+}
+.sno{
+    text-align: center;
+}
+.delete a{
+	color: white;
+	background: #a52a2a;
+	padding: 1px 6px;
+	border-radius: 3px;
+	text-decoration: none;
+    cursor:pointer;
+}
+.date{
+    text-align: center;
+}
+.edit{
+	text-align: center;
+}
+.edit a{
+	color: white;
+	background: #435ef5;
+	padding: 1px 6px;
+	border-radius: 3px;
+	text-decoration: none;
+    cursor:pointer;
+}
+
+.status{
+	text-align: center;
+}
+.status a{
+	color: rgb(20, 18, 18);
+	background: hsl(60, 1%, 57%);
+	padding: 1px 6px;
+	border-radius: 3px;
+	text-decoration: none;
+    cursor:pointer;
+}
+.status a:visited{
+	color: rgb(255, 255, 255);
+	background: hsl(120, 94%, 45%);
+	padding: 1px 6px;
+	border-radius: 3px;
+	text-decoration: none;
+    cursor:pointer;
+}
+#duedate{
+	
+	border: 2px solid #000000;
+}

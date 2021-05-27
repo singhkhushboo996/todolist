@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+*{
+    font-family: 'Balsamiq Sans', cursive;
+}
+.fromclass{
+    position: absolute;
+	left: 5%;
+}
+.fieldsetclass{
+    border:2px solid green; 
+    border-radius: 10px;
+}
+.error{
+    color: #FF0000;
+}
+
+.loginfrom{
+    position: absolute;
+    left: 5%;
+}
+.loginsetup{
+    position: absolute;
+    left: 5%;
+}
+
+.sucess{
+    color: rgb(241, 170, 15);
+}
+
+
+
+
+
