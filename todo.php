@@ -62,6 +62,7 @@ $tasks = mysqli_query($conn,$sql1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="style1.css">
+    <script src="https://kit.fontawesome.com/a2029513e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="heading">
@@ -89,7 +90,8 @@ if($_SESSION["username"]) {
     <tr>
         <th>Sno.</th>
         <th>Tasks to do</th>
-        <th>Action</th>
+        <th>Delete</th>
+        <th>Edit</th>
         <th>Due Date</th>
         <th>Status</th>
     </tr>
@@ -100,7 +102,10 @@ if($_SESSION["username"]) {
         <td class="sno"><?php echo $i; ?></td>
         <td class="tasktodo" onclick="myfun()"><?php echo $row['task']; ?></td>
         <td class="delete">
-         <a href="todo.php?del_task=<?php echo $row['id'] ?>">Delete</a>
+         <a href="todo.php?del_task=<?php echo $row['id'] ?>">Delete <i class="fas fa-trash-alt"></i></a>
+        </td>
+        <td class="edit">
+         <a href="edittodo.php?edit_task=<?php echo $row['id'] ?>">Edit <i class="fas fa-edit"></i></a>
         </td>
         <td class="date"><?php echo $row['date']; ?></td>
         <td class="status"> 

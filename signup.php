@@ -215,6 +215,8 @@ $valid=0;
     }
     
     mysqli_close($conn);
+    header('location : loginsetup.php');
+
 
   }
 
