@@ -210,12 +210,13 @@ $valid=0;
   
     if (mysqli_query($conn, $sql)) {
       echo "sucessfully added";
+      header("Location:loginsetup.php");
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     
     mysqli_close($conn);
-    header('location : loginsetup.php');
+    
 
 
   }
@@ -247,31 +248,39 @@ function test_input($data) {
 <p style="color:blue">Please fill this from to create new account.</p>
 <p><span class="error">* required field</span></p>
 <!-- <h3 class="sucess"><?php echo $success;?></h3> -->
+
 <form action="<?php if($valid < 12){ echo htmlspecialchars($_SERVER["PHP_SELF"]);}?>" method="post" enctype="multipart/form-data">
 <fieldset class="fieldsetclass"><legend ><b>Personal Detail</b></legend>
 <label for="image">Display picture:</label>
+<span class="error">* <?php echo $imgErr;?></span><br>
 <input type="file"  id="image" name="image" required/>
-<span class="error">* <?php echo $imgErr;?></span><br><br>
+<br><br>
 <label for="fname">First Name:</label>
-<input type="text" name="fname" id="fname" required>
-<span class="error">* <?php echo $fnameErr;?></span><br><br>
-<label for="lname">Last Name:</label>
-<input type="text" name="lname" id="lname">
+<span class="error">* <?php echo $fnameErr;?></span><br>
+<input type="text" name="fname" id="fname" size=50 required>
+<br><br>
+<label for="lname">Last Name:</label><br>
+<input type="text" name="lname" id="lname" size=50>
 <br><br>
 <label for="email">Email:</label>
-<input type="email" name="email" id="email" required>
-<span class="error">* <?php echo $emailErr;?></span><br><br>
+<span class="error">* <?php echo $emailErr;?></span><br>
+<input type="email" name="email" id="email" size=50 required>
+<br><br>
 <label for="linkedin">Linkedin Profile Link:</label>
-<input type="url" name="linkedin" id="linkedin" required>
-<span class="error">* <?php echo $linkedinErr;?></span><br><br>
+<span class="error">* <?php echo $linkedinErr;?></span><br>
+<input type="url" name="linkedin" id="linkedin" size=50 required>
+<br><br>
 <label for="github">Github Link:</label>
-<input type="url" name="github" id="github" required>
-<span class="error">* <?php echo $githubErr;?></span><br><br>
+<span class="error">* <?php echo $githubErr;?></span><br>
+<input type="url" name="github" id="github" size=50 required>
+<br><br>
 <label for="university">University Name:</label>
-<input type="text" name="university" id="university" autocomplete="on" required>
-<span class="error">* <?php echo $uninameErr;?></span><br><br>
+<span class="error">* <?php echo $uninameErr;?></span><br>
+<input type="text" name="university" id="university" autocomplete="on"  size=50 required>
+<br><br>
 
 <label class="coursename">Course name:</label>
+<span class="error">* <?php echo $courseErr;?></span><br>
 <!-- <input type="checkbox" name="check_list[]" value="HTML"><label>HTML</label>
 <input type="checkbox" name="check_list[]" value="CSS"><label>CSS</label>
 <input type="checkbox" name="check_list[]" value="Javascript"><label>Javascript</label>
@@ -285,21 +294,23 @@ function test_input($data) {
         <option value="jquery">jQuery</option>
         <option value="php">PHP</option>
     </select>
-
-
-<span class="error">* <?php echo $courseErr;?></span><br><br>
+<br><br>
   
 <label for="discipline">Discipline:</label>
-<input type="text" name="discipline" id="discipline" required>
-<span class="error">* <?php echo $disciErr;?></span><br><br>
+<span class="error">* <?php echo $disciErr;?></span><br>
+<input type="text" name="discipline" id="discipline"  size=50 required>
+<br><br>
 <label for="course_completion">Course Completion Date:</label>
+<span class="error">* <?php echo $coursecompErr;?></span><br>
 <input type="date" id="course_completion" name="course_completion" required>
-<span class="error">* <?php echo $coursecompErr;?></span><br><br>
+<br><br>
 <label for="mobile">Mobile Number:</label>
+<span class="error">* <?php echo $mobileErr;?></span><br>
 <input type="tel" name="mobile" id="mobile" required>
-<span class="error">* <?php echo $mobileErr;?></span><br><br>
+<br><br>
 
 <label for="address">Address: </label>
+<span class="error">* <?php echo $addErr;?></span>
 <ol type ="a">
 <li><label for="country">Country:</label></li>
 <select name="country">
@@ -329,12 +340,14 @@ function test_input($data) {
         <option value="hisar">Hisar</option>
     </select>
 </ol>
-<span class="error">* <?php echo $addErr;?></span><br><br>
+<br>
 <label for="dob">Date of Birth:</label>
+<span class="error">* <?php echo $dobErr;?></span><br>
 <input type="date" name="dob" id="dob" required>
-<span class="error">* <?php echo $dobErr;?></span><br><br>
+<br><br>
 
 <label for="gender">Gender:</label>
+<span class="error">* <?php echo $genderErr;?></span><br>
 <input type="radio" name="gender" value="female"
 <?php if (isset($gender) && $gender=="female") echo "checked";?>
 ><label>Female</label>
@@ -344,12 +357,10 @@ function test_input($data) {
 <input type="radio" name="gender" value="other"
 <?php if (isset($gender) && $gender=="other") echo "checked";?>
 ><label>Others</label>
-<span class="error">* <?php echo $genderErr;?></span><br><br>
-
 <br><br>
 
 <input type="submit" value="SUBMIT"><br><br><br>
-<button><a href="loginsetup.php">Next Step ></a></button><br><br>
+
 </fieldset>
 
 </form>

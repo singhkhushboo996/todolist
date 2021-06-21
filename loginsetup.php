@@ -61,6 +61,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
            $sql = "INSERT INTO login(username,password,confrimpassword) VALUES ('$username','$password','$confirmpassword')";
            if (mysqli_query($conn, $sql)) {
             echo "<p>".$sucess."</p>";
+            header("Location:index.php");
           } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
           }
@@ -109,7 +110,7 @@ function test_input($data) {
 <input type="submit" value="SUBMIT"><br><br><br>
 </fieldset>
 </form>
-<p>Go to<a href="index.php">Login page</a></p>
+
 </div>
 </div>
 </body>

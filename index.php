@@ -57,7 +57,7 @@ require_once "config.php";
             
             <br><br>
 
-            <input type="submit" value="Submit"><br><br>
+            <button type="submit">SUBMIT</button><br><br>
             <p>Don't have an account? <a href="signup.php">Signup Here!</a></p>
 
             

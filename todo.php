@@ -45,7 +45,7 @@ if(isset($_GET['complete'])){
 }
 
 
-$sql1="SELECT * FROM todo";
+$sql1="SELECT * FROM `todo` WHERE userid='".$_SESSION["username"]."'";
 $tasks = mysqli_query($conn,$sql1);
 
 
